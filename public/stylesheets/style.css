@@ -17,7 +17,8 @@ width: 98%;
 color:#325D90;
 background-color: red;
 text-align: center;
-height:7%;
+padding:5px 0px;
+height:auto;
 border-top-right-radius: 10px;
 border-top-left-radius: 10px;
 border:2px #83D667 outset;
@@ -64,9 +65,10 @@ clear: both;
 background-color:#83D667;
 text-align: center;
 width: 98%;
-height:5%;
-border-top:2px #67B84B solid;
+height:6%;
 border:2px #83D667 outset;
+border-top:4px #6FA0CB solid;
+padding-top:10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 background:-moz-linear-gradient(#83D667 0%, #67B84B 100%);
@@ -80,6 +82,47 @@ border-radius: 10px;
 width: 80%;
 margin:2% auto auto auto;
 border:2px #83D667 outset;
+}
+.img
+{
+float:left;
+margin:7% ; 
+vertical-align: middle;
+border: 2px #83D667 inset;
+border-radius:10px;
+width:40%;
+height:40%;	
+ -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+     -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+/*http://www.estudiosurestao.com/blog/6-efectos-para-tus-imagenes-con-css3/*/
+.img:hover {
+    
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2)
+
+}
+article{margin:auto;}
+ p {
+text-align: justify;
+text-indent:20px; 
+color: #E5E5E5;
+z-index:9;
+}
+p:first-letter
+{
+font-size:2em; 
+font-weight: bold;
 }
 a 
 {
@@ -104,7 +147,7 @@ color: #00B7FF;
 text-decoration:none;
 width: auto;
 display: inline;
-margin-top:4px;
+margin-bottom: 0px;
 
 }
 .boton{
@@ -160,15 +203,12 @@ height:25px;}
 /* estilos para pantallas medianas */
 @media all and (max-width: 840px) {
 /*section:after { content: "hola son o mediano :) "; }*/
-header{
-width: 98%;
-height:8%;
-}
 nav{
 clear:both;
 margin: 2px 2px auto 0px;
 width:98%;
 height:auto;
+text-align: center;
 }
 section{
 position:relative;
@@ -250,10 +290,8 @@ a:hover
 }
 
 @media all and (max-width: 360px) {
-header{
-width: 98%;
-height:auto;
-}
-nav{margin-top: 4px;}
+
+nav{margin-top:4px;}
+.boton{display: block;width:auto;margin:2px 0px; }
 
 }
