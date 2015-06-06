@@ -1,0 +1,10 @@
+body             { background: #F2F1F0; }
+
+
+
+h2 span, section h3, label.rem 
+                 { display: none; }
+body             { font-size: x-large; }
+input, button    { font-size: large; }
+footer           { font-size: large; }
+.quiz_img { float: none; }

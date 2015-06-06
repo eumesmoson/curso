@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title><%= pregunta %></title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+
+<meta name="viewport" content="initial-scale=1">
+<link rel="shortcut icon" href="/images/help.png" />
+</head>
+<body>
+  
+    <header>
+       <h1>Bienbenido a <%= title %></h1>
+    </header>
+    <nav class="main" id="n1" role="navigation">
+    <a class="boton" href="/">Inicio</a>
+    <a class="boton" href="/quizes/question">Empezar a Jugar</a>
+    </nav>
+    <section>
+     <form method="get" action="/quizes/answer">
+       <fieldset><legend>Preguntas</legend>
+       <label><%= pregunta %></label>
+       <input type="text" size="20" name="respuesta" placeholder="Responda aqui...">
+       <input class="boton" type="submit" value="Enviar" />
+       </fieldset></form>
+    </section>
+    
+    <footer>
+        <%= title %>
+    </footer>
+</body>
+</html>

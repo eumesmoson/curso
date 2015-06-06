@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title><%= title %></title>
+<title></title>
 <meta charset="utf-8" />
-<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
 
 <meta name="viewport" content="initial-scale=1">
-
 <link rel="shortcut icon" href="/images/help.png" />
 </head>
- 
 <body>
-    <header>
+ <header>
        <h1>Bienbenido a <%= title %></h1>
     </header>
-    <nav role="navigation">
+    <nav class="main" id="n1" role="navigation">
     <a class="boton" href="/">Inicio</a>
     <a class="boton" href="/quizes/question">Empezar a Jugar</a>
-    <a href="#" class="alider">dfgdfg</a>
-
     </nav>
     <section>
-    <article>
-    <p>El portal donde podrá crear sus propios juegos!</p>
-    </article>
+    <fieldset><legend>Respuestas</legend>
+    <label><%= respuesta %></label><input type="button" class=<%= tipo %> value=<%= resultado %>/>
+    </fieldset>
     </section>
     
     <footer>
-        <a class="enlacesfooter" href="https://github.com/eumesmoson/">Proyecto en github</a>
+        <%= title %>
     </footer>
+
 </body>
 </html>
