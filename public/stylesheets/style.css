@@ -290,8 +290,11 @@ a:hover
 }
 
 @media all and (max-width: 360px) {
-
-nav{margin-top:4px;}
+body{margin:0px;}
+header{width: 100%;}
+section{width: 100%;}
+footer{width: 100%;}
+nav{margin-top:4px;width: 100%;}
 .boton{display: block;width:auto;margin:2px 0px; }
 
 }
