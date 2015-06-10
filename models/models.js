@@ -33,9 +33,9 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 //var sequelize= new Sequelize(null,null,null,
 //{dialect:"sqlite",storage:"quiz.sqlite"});
 //importamos defenición da taboa Quiz en quiz.js
-var Quiz=sequelize.import(path.join(__dirname,'quiz'));
+var quiz_path = path.join(__dirname,'quiz');
 var Quiz = sequelize.import(quiz_path);
-exports.Quiz=Quiz; //para ter acceso no resto do sitio
+exports.Quiz= Quiz; //para ter acceso no resto do sitio
 
 //sequelize.sync() crea e inicializa taboa en bd 
 sequelize.sync().then(function(){
