@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title></title>
+<title><%= pregunta %></title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
 
@@ -9,25 +9,31 @@
 <link rel="shortcut icon" href="/images/help.png" />
 </head>
 <body>
- <header>
-       <h1>Tu respuesta:<%= respuesta %></h1>
+  
+    <header>
+       <h1><%= pregunta %></h1>
     </header>
     <nav class="main" id="n1" role="navigation">
     <a class="boton" href="/">Inicio</a>
-    <a class="boton" href="/quizes">Preguntas</a>
+     <a class="boton" href="/quizes">Preguntas</a>
     </nav>
     <section>
-    <fieldset><legend>Respuestas</legend>
-    <label><%= respuesta %></label><input type="button" class=<%= tipo %> value=<%= resultado %>/>
-    <span id="efecto"><input type="button" class=<%= tipo %> value="Volver" 
-    onClick="window.location='/quizes/1'" style="cursor:pointer"/></span>
 
-    </fieldset>
+     <form method="get" action="/quizes/<%= num %>/answer">
+       <fieldset><legend>Preguntas</legend>
+       <label><%= pregunta %></label>
+
+       <input type="text" size="20" name="respuesta" placeholder="Responda aqui...">
+       <input class="boton" type="submit" value="Enviar" />
+       </fieldset></form>
+      
+
+
+    
     </section>
     
     <footer>
         <%= title %>
     </footer>
-
 </body>
 </html>
