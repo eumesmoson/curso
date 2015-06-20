@@ -47,7 +47,8 @@ res.render('quizes/show', { pregunta:req.quiz.pregunta,title:req.quiz.respuesta,
 };
 
 exports.answer=function(req,res){
-if(req.query.respuesta===req.quiz.respuesta)
+	
+if(req.query.respuesta[0].toUpperCase()+req.query.respuesta.slice(1)===req.quiz.respuesta)
 {
 res.render('quizes/answer', {resultado:' Correcto ',respuesta:req.quiz.respuesta,tipo:'acierto',title:'Preguntas'});
 }
