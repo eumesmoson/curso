@@ -41,7 +41,7 @@ exports.Quiz= Quiz; //para ter acceso no resto do sitio
 sequelize.sync().then(function(){
 
 	Quiz.count().then(function(count){
-	if(count===0){
+	if(count<7){
 		Quiz.create({
 		pregunta:'Capital de Italia',respuesta:'Roma',tema:'humanidades'
 	});
