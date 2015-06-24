@@ -18,18 +18,29 @@
      <a class="boton" href="/quizes">Preguntas</a>
     </nav>
     <section>
-
+    <article>
      <form method="get" action="/quizes/<%= num %>/answer">
        <fieldset><legend>Preguntas</legend>
        <label><%= pregunta %></label>
-
-       <input type="text" size="20" name="respuesta"  
+        <input type="text" size="20" name="respuesta"  
+       onblur="this.value[0].toUpperCase() +this.value.slice(1)"
         placeholder="Responda aqui...">
        <input class="boton" type="submit" value="Enviar"  />
        </fieldset></form>
-      
+    </article>
+    <article>
+     <p><% if(errors.length){ %>
+     Corregir errores:<hr>
+     <span class="errores">
 
+      <% for(var i in errors){ %>
+         <%=errors[i] %><hr>
+      <% } %>
+     </span>
+     <% } %>
 
+     </p>
+     </article>
     
     </section>
     

@@ -43,16 +43,25 @@ sequelize.sync().then(function(){
 	Quiz.count().then(function(count){
 	if(count===0){
 		Quiz.create({
-		pregunta:'Capital de Italia',respuesta:'Roma'
+		pregunta:'Capital de Italia',respuesta:'Roma',tema:'humanidades'
 	});
         Quiz.create({
-		pregunta:'Capital de Portugal',respuesta:'Lisboa'
+		pregunta:'Capital de Portugal',respuesta:'Lisboa',tema:'humanidades'
 	});
         Quiz.create({
-		pregunta:'Capital de Francia',respuesta:'Paris'
+		pregunta:'Capital de Francia',respuesta:'Paris',tema:'humanidades'
 	});
         Quiz.create({
-		pregunta:'Capital de Alemania',respuesta:'Berlin'
+		pregunta:'Capital de Alemania',respuesta:'Berlin',tema:'humanidades'
+	});
+    Quiz.create({
+		pregunta:'Capital de Inglaterra',respuesta:'Londres',tema:'humanidades'
+	});
+	Quiz.create({
+		pregunta:'Capital de España',respuesta:'Madrid',tema:'humanidades'
+	});
+	Quiz.create({
+		pregunta:'Capital de Rusia',respuesta:'Moscu',tema:'humanidades'
 	});
 };
 }).then(function(){console.log('BASE DE DATOS INCICIALIZADA :) ')});

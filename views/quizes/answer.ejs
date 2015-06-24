@@ -17,12 +17,13 @@
     <a class="boton" href="/quizes">Preguntas</a>
     </nav>
     <section>
+    <article>
     <fieldset><legend>Respuestas</legend>
     <label><%= respuesta %></label><input type="button" class=<%= tipo %> value=<%= resultado %>/>
     <span id="efecto"><input type="button" class=<%= tipo %> value="Volver" 
-    onClick="window.location='/quizes/1'" style="cursor:pointer"/></span>
-
+    onClick="window.location='/quizes/<%= num %>'" style="cursor:pointer"/></span>
     </fieldset>
+    </article>
     </section>
     
     <footer>

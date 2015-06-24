@@ -1,0 +1,20 @@
+ <fieldset>
+       <hr><legend>Tu pregunta</legend>
+       <label for="preg">Pregunta&nbsp;&nbsp;</label>
+       <input type="text" size="25" id="preg" name="quiz[pregunta]"  placeholder="Escriba aqui su pregunta..." value="<%= quiz.pregunta %>" ><hr>
+       <label for="resp">Respuesta</label>
+       <input type="text" size="25" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" placeholder="Escriba aqui su respuesta..." ><hr>
+       <label for="tema" >Tema</label>
+        <select name="tema">
+        <option value="<%=quiz.tema%>" selected><%=quiz.tema[0].toUpperCase()+quiz.tema.slice(1)%></option>
+        <option value="otro">Otro</option>
+        <option value="humanidades">Humanidades</option>
+        <option value="ocio">Ocio</option>
+        <option value="ciencia">Ciencia</option>
+        <option value="tecnologia">Tecnología</option>
+        </select>
+        
+       <hr>
+       <input class="boton" type="submit" value="Guardar" title="Pulse para guardar cambios"  />
+       <input class="boton" type="reset" value="Deshacer" title="Pulse para volver a la pregunta" />
+       </fieldset>

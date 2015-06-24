@@ -171,11 +171,9 @@ margin-bottom: 0px;
 }
 ol{list-style: none;}
 li{
-
-margin-left: auto;
-margin-right: auto;
-margin:3px auto;
-width:70%;}
+margin:10px auto;
+width:98%;
+max-width:98%}
 li a{width:100%;text-align:left;display: inline; }
 table {
 padding:0px;
@@ -188,6 +186,7 @@ table a{margin:2px auto;padding:2px auto;display: inline;}
 
 .boton{
 color: #83D667;
+padding:auto;
 background:-moz-linear-gradient(#71B3E5 0%, #325D90 100%);
 background:-webkit-linear-gradient(#71B3E5 0%, #325D90 100%);
 background:-ms-linear-gradient(#71B3E5 0%, #325D90 100%);
@@ -255,6 +254,29 @@ background:linear-gradient(#71B3E5 0%, #325D90 100%);
 border-radius: 10px;
 border:2px #83D667 inset;
 }
+.margen{margin-left: 13%}
+.errores{color:orange;font-weight: bold;}
+.enlaceslista{background-color: red;display: inline;}
+.enlaceslista a{
+color:orange;
+}
+.enlaceslista a:hover{
+color:#83D667;
+}
+.conten {display:inline;float:right;clear:right;}
+.contenedor form {display:inline;float:right}
+.contenedor form input[type="submit"]:hover{
+  background:linear-gradient(#D43731 0%, red 100%);
+  border:2px red inset; }
+  
+select{
+  width:auto;
+  background-color: red;
+  margin-left:px;
+  background-color:white;
+  border-radius:3px;
+  border:2px;}
+
 
 /* estilos para pantallas medianas */
 @media all and (max-width: 840px) {
@@ -353,10 +375,25 @@ header{width: 100%;}
 section{width: 100%;}
 footer{width: 100%;}
 nav{margin-top:4px;width: 100%;}
-.boton{display: block;width:auto;margin:2px 0px; }
+.boton{display: block;width:90%;margin-left:auto;margin-right:auto;height:25px; }
 fieldset{font-size:14px;}
 fieldset .boton{margin:4px auto;height:35px;width:80%;}
 .acierto,.error{margin:4px auto;height:35px;width:80%;}
 label{display: block}
 li{width: 100%;}
+input[type="text"]   {margin:0px auto 0px 10px ;width:90%;padding:auto; }
+.conten{
+display: inline-block;
+float:none;
+width: 100%;
+}
+.contenedor form {width:100%;}
+.contenedor form input[type="submit"]{width:90%;}
+
+
+}
+.contenedor
+{
+  overflow: auto;
+  height:300px;
 }
