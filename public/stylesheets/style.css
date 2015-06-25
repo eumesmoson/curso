@@ -264,6 +264,12 @@ color:orange;
 color:#83D667;
 }
 .conten {display:inline;float:right;clear:right;}
+.contenedor
+{
+  overflow: auto;
+  height:300px;
+  width: auto;
+}
 .contenedor form {display:inline;float:right}
 .contenedor form input[type="submit"]:hover{
   background:linear-gradient(#D43731 0%, red 100%);
@@ -370,7 +376,8 @@ li a{width:100%;display: inline;text-align: center;}
 }
 
 @media all and (max-width: 360px) {
-body{margin:0px;}
+body{margin:0px;font-size:16px;}
+h1{font-size:18px;}
 header{width: 100%;}
 section{width: 100%;}
 footer{width: 100%;}
@@ -380,8 +387,18 @@ fieldset{font-size:14px;}
 fieldset .boton{margin:4px auto;height:35px;width:80%;}
 .acierto,.error{margin:4px auto;height:35px;width:80%;}
 label{display: block}
-li{width: 100%;}
-input[type="text"]   {margin:0px auto 0px 10px ;width:90%;padding:auto; }
+
+.contenedor{width:auto;margin-left: 0px;}
+.contenedor ol {width:auto;margin:0px;padding:0px;}
+.contenedor li{width:100%;margin-left: 0px;padding-left:0px;display: block;}
+.contenedor .boton {width: 90%;margin:2px auto;display: block;height: 30px;}
+.contenedor input[type="submit"] {width:auto;margin:2px auto;display: block;height: 30px;}
+
+.buscar .boton {width: 90%;margin:2px auto;display: block;height: 30px;}
+.buscar input[type="text"]   {margin:auto ;width:96%;padding:auto; }
+.numpreg{margin:0px auto;width: 100%;}
+
+
 .conten{
 display: inline-block;
 float:none;
@@ -391,9 +408,4 @@ width: 100%;
 .contenedor form input[type="submit"]{width:90%;}
 
 
-}
-.contenedor
-{
-  overflow: auto;
-  height:300px;
 }

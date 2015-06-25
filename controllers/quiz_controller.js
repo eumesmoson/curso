@@ -90,9 +90,11 @@ res.render('quizes/edit', {quiz:quiz,errors:[]});
 };
 
 exports.update=function(req,res){
+
 req.quiz.pregunta=req.body.quiz.pregunta;
 req.quiz.respuesta=req.body.quiz.respuesta;
 req.quiz.tema=req.body.quiz.tema;
+//console.log('datos:'+req.quiz.pregunta+req.quiz.respuesta+req.quiz.tema);
 req.quiz.validate().then(
 
 	function(err){
@@ -106,8 +108,12 @@ req.quiz.validate().then(
 };
 
 exports.destroy=function(req,res){
+	console.log('dato:'+req.quiz.id);
+     
+     req.quiz.destroy(req.quiz.id).then()(
 
-     req.quiz.destroy().then()(function(){res.redirect('/quizes');}
+     	function(){res.redirect('/quizes');}
 
 	).catch(function(error){next(error)});
+
 };
