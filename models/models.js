@@ -27,16 +27,19 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 );
 
 
-//cargamos modelo ORM
-//var Sequelize=require('sequelize');
-//usamos a bd
-//var sequelize= new Sequelize(null,null,null,
-//{dialect:"sqlite",storage:"quiz.sqlite"});
-//importamos defenición da taboa Quiz en quiz.js
-var quiz_path = path.join(__dirname,'quiz');
-var Quiz = sequelize.import(quiz_path);
-exports.Quiz= Quiz; //para ter acceso no resto do sitio
+var quiz_path= path.join(__dirname,'quiz');
+var Quiz= sequelize.import(quiz_path);
 
+var comment_path=path.join(__dirname,'comment');
+var Comment=sequelize.import(comment_path);
+
+Comment.belongsTo(Quiz);
+Quiz.hasMany(Comment);
+
+//Comment.belongsTo(Quiz);//relacion n-1
+//Quiz.hasMany(Comment);//relacion 1-n
+exports.Quiz= Quiz; //para ter acceso no resto do sitio
+exports.Comment= Comment;
 //sequelize.sync() crea e inicializa taboa en bd 
 sequelize.sync().then(function(){
 

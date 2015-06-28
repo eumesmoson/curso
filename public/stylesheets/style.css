@@ -1,5 +1,6 @@
 html{height:100%;margin:0px;padding: 0px;}
-body {
+body 
+{
   height:100%;
   padding:0px;
   margin-left:2%;
@@ -8,15 +9,13 @@ body {
   background-image: url("/images/nube.jpg");
   background-color:#67B84B;
 }
-h1{
-margin:2px;
-text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);}
+
 /*https://sopadecoditos.wordpress.com/2012/06/21/texto-con-efecto-3d-con-css3/*/
 header{
 width: 98%;
 color:#325D90;
 background-color: red;
-text-align: center;
+text-align:center;
 padding:5px 0px;
 height:auto;
 border-top-right-radius: 10px;
@@ -28,8 +27,11 @@ background:-ms-linear-gradient(#83D667 0%, #67B84B 100%);
 background:-o-linear-gradient(#83D667 0%, #67B84B 100%);
 background:linear-gradient(#83D667 0%, #67B84B 100%);
 }
-nav{
-
+h1{margin:2px;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);display: inline;}
+.usuario{color:white;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);
+font-weight: bold}
+nav
+{
 margin: 2px 2px auto 0px;
 width:20%;
 height:80%;
@@ -125,7 +127,6 @@ p:first-letter
 font-size:2em; 
 font-weight: bold;
 }
-
 .buscar p {
 display: inline-block;
 text-align: left;
@@ -161,29 +162,45 @@ a:hover
   text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);
   text-decoration: underline;
 }
-.enlacesfooter{
+header a 
+{
+  position: relative;
+  display:inline;
+  font-size:18px;
+  margin-left: 10%;
+  height: auto;
+  padding-top:0px;
+  border:0px;
+  color:#EE5E23;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow:1px 1px 2px #63A1D3,0px 2px 1px rgba(0,0,0,0.7);
+
+}
+header a:hover
+{
+  color: orange;
+  text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);
+  text-decoration: underline;
+}
+.enlacesfooter
+{
 color: #00B7FF;
 text-decoration:none;
 width: auto;
 display: inline;
 margin-bottom: 0px;
-
 }
+#comentarios{width:80%;border-radius: 10px;border:2px #83D667 outset;}
+.vercomentarios{display: none;width:98%;margin:auto;}
+#vercomen textarea {resize: none;width:98%;margin:2px auto;padding:auto;overflow:auto;}
+#anadecomen textarea {resize: none;width:98%;margin:2px auto;padding:auto;}
 ol{list-style: none;}
-li{
-margin:10px auto;
-width:98%;
-max-width:98%}
-li a{width:100%;text-align:left;display: inline; }
-table {
-padding:0px;
-margin:2px auto;
-border-spacing: 0px;
-}
+li{margin:10px auto;width:98%;max-width:98%}
+li a{width:100%;text-align:left;display: inline;}
+table {padding:0px;margin:2px auto;}
 table td{width:50%;border:0px;}
-
 table a{margin:2px auto;padding:2px auto;display: inline;}
-
 .boton{
 color: #83D667;
 padding:auto;
@@ -196,7 +213,6 @@ border-radius: 10px;
 border:2px #83D667 outset;
 height:25px;
 }
-
 .boton:hover {
 background:-moz-linear-gradient(#83D667 0%, #67B84B 100%);
 background:-webkit-linear-gradient(#83D667 0%, #67B84B 100%);
@@ -231,7 +247,6 @@ border:2px #67B84B outset;
 color:#E5E5E5;
 font-weight: bold;
 height:25px;}
-
 #efecto .acierto:hover
 {
 color: #83D667;
@@ -274,6 +289,7 @@ color:#83D667;
 .contenedor form input[type="submit"]:hover{
   background:linear-gradient(#D43731 0%, red 100%);
   border:2px red inset; }
+.boton1 {width:100px;border:1px white solid;color:white}
   
 select{
   width:auto;
@@ -283,7 +299,37 @@ select{
   border-radius:3px;
   border:2px;}
 
+.aider{margin-left: 85%;}
+.aider2{display:inline;margin-left: 74.5%;}
+/* estilos para pantallas medianas */
+@media all and (max-width: 840px) {
+/*section:after { content: "hola son o mediano :) "; }*/
+nav{
+clear:both;
+margin: 2px 2px auto 0px;
+width:98%;
+height:auto;
+text-align: center;
+}
+section{
+position:relative;
+float:left;
+margin-left: 0px;
+width:98%;
+height:70%; 
+}
+article{width:70%;margin-left: auto;}
 
+.boton{
+position:relative;
+height:25px;
+margin-left: 2px;
+}
+
+.alider{float:right;clear: right;}
+#accesos{float:right;clear: right;}
+
+}
 /* estilos para pantallas medianas */
 @media all and (max-width: 840px) {
 /*section:after { content: "hola son o mediano :) "; }*/
@@ -325,65 +371,19 @@ a:hover
   text-align: center;
   color: #00B7FF;
   text-decoration: underline;
-}	
+} 
 .alider{float:right;}
 }
-@media all and (max-width: 480px) {
-/*section:after { content: "hola son o pequeno :) "; }*/
-
-nav{
-clear:both;
-margin: 2px 2px auto 0px;
-width:98%;
-text-align: center;
-height:auto;
-}
-section{
-position:relative;
-float:left;
-margin-left: 0px;
-width:98%;
-height:70%; 
-}
-article{width:90%;margin-left: auto;}
-
-.boton{
-position:relative;
-height:25px;
-margin-left: 2px;
-}
-a 
-{
-  display:inline-block;
-  margin-top:0px;
-  width:120px;
-  z-index: 1;
-
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-}
-a:hover
-{
-  text-decoration: none;
-  text-align: center;
-  color: #00B7FF;
-  text-decoration: underline;
-}	
-.alider{display: block;}
-li{margin:4px auto;}
-li a{width:100%;display: inline;text-align: center;}
-}
-
 @media all and (max-width: 360px) {
 body{margin:0px;font-size:16px;}
 h1{font-size:18px;}
 header{width: 100%;}
 section{width: 100%;}
+article {width: 100%;}
 footer{width: 100%;}
 nav{margin-top:4px;width: 100%;}
 .boton{display: block;width:90%;margin-left:auto;margin-right:auto;height:25px; }
-fieldset{font-size:14px;}
+fieldset{font-size:14px;margin:0px;width:93%;}
 fieldset .boton{margin:4px auto;height:35px;width:80%;}
 .acierto,.error{margin:4px auto;height:35px;width:80%;}
 label{display: block}
@@ -395,7 +395,7 @@ label{display: block}
 .contenedor input[type="submit"] {width:auto;margin:2px auto;display: block;height: 30px;}
 
 .buscar .boton {width: 90%;margin:2px auto;display: block;height: 30px;}
-.buscar input[type="text"]   {margin:auto ;width:96%;padding:auto; }
+.buscar input[type="text"]   {margin:auto ;width:96%;padding:auto;height: 30px; }
 .numpreg{margin:0px auto;width: 100%;}
 
 

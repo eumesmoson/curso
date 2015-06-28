@@ -41,7 +41,40 @@
 
      </p>
      </article>
+    <article id="comentarios">
+    <p>Comentarios:
+    <button class="boton" onclick="document.getElementById('vercomen').style.display='block'">Ver</button>
+    <button class="boton" onclick="document.getElementById('vercomen').style.display='none'">Ocultar</button>
+   </p>
+    <div id="vercomen" class="vercomentarios" >
     
+    
+  <%
+  if (typeof quiz !== 'undefined') {
+  for (index in quiz.Comments) {%>        
+<textarea rows="4"   readonly="yes">
+<%=quiz.Comments[index].texto %>
+
+
+</textarea>
+
+     <%}}%>
+    <hr>
+    <p><button class="boton aider" onclick="document.getElementById('anadecomen').style.display='block'" onClick="" >Añadir</button></p>
+    
+    </div>
+    <div id="anadecomen" class="vercomentarios">
+    <form method="post" action="/quizes/<%=num%>/comments" >
+    <textarea rows="4" id="comment" name="comment[texto]" placeholder="Escribe aqui tu comentario...">
+    
+    </textarea>
+    <hr>
+    <p class="aider2"><button type="submit" class="boton "  onClick="document.getElementById('anadecomen').style.display='none'" >Enviar</button>
+    <button type="reset" class="boton "  onClick="document.getElementById('anadecomen').style.display='none'" >Cancelar</button><br><br></p>
+
+    </form>
+    </div>
+    </article>
     </section>
     
     <footer>

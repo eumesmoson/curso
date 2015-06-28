@@ -6,9 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var connect= require('connect')
 var methodOverride = require('method-override');
+var session=require('express-session');
 var partials=require('express-partials');
 var routes = require('./routes/index');
-//var users = require('./routes/users');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -22,19 +23,24 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
-app.use(cookieParser());
-app.use('/', routes);
-app.use(partials());
+app.use(cookieParser('Quiz 2015'));
 
+app.use(session());
+app.use(partials());
+app.use('/users', users);
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  if(!req.path.match(/\/login|\/logout/))
+    {req.session.redir=req.path;}
+  res.locals.session=req.session;
+  //res.render('index', { title: 'Preguntas',session:req.session,errors:[] });
+  next();
+
 });
+
+app.use('/', routes);
 
 // error handlers
 

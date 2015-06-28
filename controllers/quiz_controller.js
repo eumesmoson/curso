@@ -1,15 +1,20 @@
 var models=require('../models/models.js');
 
-exports.load=function(req, res, next, quizId){
-models.Quiz.findById(quizId).then(
-	function(quiz) {
-	if(quiz){
-	   req.quiz=quiz;
-	   next();
-	}
-    else{next(new Error('No existe la pregunta: '+quizId));}
-}
-).catch (function(error){next(error);});
+exports.load = function(req, res, next, quizId) {
+  models.Quiz.find({
+            where: {
+                id: Number(quizId)
+            },
+            include: [{
+                model: models.Comment
+            }]
+        }).then(function(quiz) {
+      if (quiz) {
+        req.quiz = quiz;
+        next();
+      } else{next(new Error('No existe quizId=' + quizId))}
+    }
+  ).catch(function(error){next(error)});
 };
 
 exports.index=function(req,res){
@@ -36,7 +41,7 @@ res.render('quizes/index.ejs', { quizes:quizes,title:'Lista de Preguntas',
 
 exports.show=function(req,res){
 res.render('quizes/show', { pregunta:req.quiz.pregunta,title:req.quiz.respuesta,
-	num:req.quiz.id,errors:[]});
+	num:req.quiz.id,quiz:req.quiz,errors:[]});
 };
 
 exports.answer=function(req,res){
@@ -45,7 +50,7 @@ if(req.query.respuesta.length===0){
 	req.query.respuesta='Escribe algo :(';	
 	errores[0]='Escribe algo :(';
 	res.render('quizes/show', {pregunta:req.quiz.pregunta,title:req.quiz.respuesta,
-		num:req.quiz.id,errors:errores});
+		num:req.quiz.id,quiz:req.quiz,errors:errores});
 	}
 
 if(req.query.respuesta[0].toUpperCase()+req.query.respuesta.slice(1)===req.quiz.respuesta)
@@ -117,3 +122,4 @@ exports.destroy=function(req,res){
 	).catch(function(error){next(error)});
 
 };
+

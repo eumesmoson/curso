@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Acceso</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+
+<meta name="viewport" content="initial-scale=1">
+<link rel="shortcut icon" href="/images/help.png" />
+</head>
+<body>
+  
+    <header>
+       <h1>Introduce tus datos</h1>
+    </header>
+    <nav class="main" id="n1" role="navigation">
+    <a class="boton" href="/">Inicio</a>
+    </nav>
+    <section>
+    <article>
+    <form method="post" action="/login">
+    <fieldset>
+       <hr><legend>Datos acceso</legend>
+       <label for="login">Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+       <input type="text" size="25" id="login" name="login"  placeholder="Login..."><hr>
+       <label for="password">Password</label>
+       <input type="password" size="25" id="password" name="password"  placeholder="Password..." >
+       <hr>
+     
+       <input class="boton" type="submit" value="Acceder" title="Pulse para acceder a la aplicacion"  />
+       <input class="boton" type="reset"  value="Borrar" title="Pulse para resetear los campos" />
+       </fieldset>
+    </form>
+     
+    
+     </p>
+     </article>
+     <article>
+     <p>
+     <% 
+     if (typeof errors !== 'undefined'){
+     if(errors.length){ %>
+     Corregir errores:<hr>
+     <span class="errores">
+
+      <% for(var i in errors){ %>
+         <%=errors[i].message %><hr>
+      <% } %>
+     </span>
+     <% }} %>
+
+     </p>
+     </article>
+    </section>
+    
+    <footer>
+       <a class="enlacesfooter" href="https://github.com/eumesmoson/curso/">Proyecto en github</a>
+        <a rel="license"  class="enlacesfooter" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+    </footer>
+</body>
+</html>
