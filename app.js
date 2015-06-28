@@ -42,9 +42,6 @@ app.use(function(req, res, next) {
 
 app.use('/', routes);
 
-// error handlers
-
-// development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
