@@ -30,7 +30,7 @@ app.use(partials());
 app.use('/users', users);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error handl
 app.use(function(req, res, next) {
 
   if(!req.path.match(/\/login|\/logout/))
