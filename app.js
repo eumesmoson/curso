@@ -32,9 +32,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+
   if(!req.path.match(/\/login|\/logout/))
     {req.session.redir=req.path;}
   res.locals.session=req.session;
+
+  if(!req.session.ultimo){
+  req.session.ultimo=new Date().getTime();
+  }
+  if(new Date().getTime()-req.session.ultimo>=120000){
+  delete req.session.user;
+  req.session.ultimo=null;
+  }
+  console.log('Acceso sesion : '+res.locals.session.id+'-->'+req.session.ultimo+
+    '-->'+new Date().getTime());
   //res.render('index', { title: 'Preguntas',session:req.session,errors:[] });
   next();
 

@@ -12,6 +12,13 @@
   
     <header>
        <h1><%= pregunta %></h1>
+       <% if (!session.user){%>
+       <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span><a href="/login">Login</a></div>
+
+       <% } else {%>
+        <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span>
+       <span class="usuario"><%= session.user.username %></span><a href="/logout">Logout</a></div>
+       <% }%>
     </header>
     <nav class="main" id="n1" role="navigation">
     <a class="boton" href="/">Inicio</a>
@@ -46,33 +53,31 @@
     <button class="boton" onclick="document.getElementById('vercomen').style.display='block'">Ver</button>
     <button class="boton" onclick="document.getElementById('vercomen').style.display='none'">Ocultar</button>
    </p>
-    <div id="vercomen" class="vercomentarios" >
-    
-    
+  <div id="vercomen" style="display:none" >
   <%
   if (typeof quiz !== 'undefined') {
-  for (index in quiz.Comments) {%>        
-<textarea rows="4"   readonly="yes">
-<%=quiz.Comments[index].texto %>
-
-
-</textarea>
-
-     <%}}%>
+  for (index in quiz.Comments) {%>   
+  <% if (quiz.Comments[index].publicado || session.user){%>
+  <textarea rows="4"   readonly="yes">
+  <%=quiz.Comments[index].texto %>
+  </textarea>
+  <%}%>
+  <% if (session.user && !quiz.Comments[index].publicado){%>
+  <button class="boton aider" onClick="window.location='/quizes/<%= num %>/comments/
+  <%=quiz.Comments[index].publicado%>/publish%>'">Publicar</button>     
+ <%}}}%>
     <hr>
-    <p><button class="boton aider" onclick="document.getElementById('anadecomen').style.display='block'" onClick="" >Añadir</button></p>
-    
+    <p><% if (session.user){%><button class="boton aider" onclick="document.getElementById('anadecomen').style.display='block'" onClick="" >Añadir</button>
+    </p>
     </div>
-    <div id="anadecomen" class="vercomentarios">
+    <div id="anadecomen" style="display:none" >
     <form method="post" action="/quizes/<%=num%>/comments" >
     <textarea rows="4" id="comment" name="comment[texto]" placeholder="Escribe aqui tu comentario...">
-    
     </textarea>
     <hr>
     <p class="aider2"><button type="submit" class="boton "  onClick="document.getElementById('anadecomen').style.display='none'" >Enviar</button>
     <button type="reset" class="boton "  onClick="document.getElementById('anadecomen').style.display='none'" >Cancelar</button><br><br></p>
-
-    </form>
+    </form><%}%>
     </div>
     </article>
     </section>

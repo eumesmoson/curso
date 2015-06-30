@@ -9,6 +9,8 @@ body
   background-image: url("/images/nube.jpg");
   background-color:#67B84B;
 }
+.portada
+{margin-left:auto;margin-right:auto;width:85%;height:90%;}
 
 /*https://sopadecoditos.wordpress.com/2012/06/21/texto-con-efecto-3d-con-css3/*/
 header{
@@ -28,6 +30,8 @@ background:-o-linear-gradient(#83D667 0%, #67B84B 100%);
 background:linear-gradient(#83D667 0%, #67B84B 100%);
 }
 h1{margin:2px;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);display: inline;}
+.usuario{color:white;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);}
+h2{color:#DE6C05;text-shadow:1px 2px 3px #9C4A00,0px 4px 3px rgba(0,0,0,0.7);}
 .usuario{color:white;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);
 font-weight: bold}
 nav
@@ -192,7 +196,8 @@ display: inline;
 margin-bottom: 0px;
 }
 #comentarios{width:80%;border-radius: 10px;border:2px #83D667 outset;}
-.vercomentarios{display: none;width:98%;margin:auto;}
+#comentarios a{margin:0px auto;padding:0px;};
+#vercomen{display:none;width:98%;margin:auto;}
 #vercomen textarea {resize: none;width:98%;margin:2px auto;padding:auto;overflow:auto;}
 #anadecomen textarea {resize: none;width:98%;margin:2px auto;padding:auto;}
 ol{list-style: none;}
@@ -406,6 +411,8 @@ width: 100%;
 }
 .contenedor form {width:100%;}
 .contenedor form input[type="submit"]{width:90%;}
-
+#vercomen textarea {resize: none;width:96%;margin:2px auto;padding:auto;overflow:auto;}
+#anadecomen textarea {resize: none;width:96%;margin:2px auto;padding:auto;}
+ol{list-style: none;}
 
 }

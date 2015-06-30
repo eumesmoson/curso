@@ -14,7 +14,13 @@
 <body>
     <header>
        <h1><%= title %></h1>
-    
+    <% if (!session.user){%>
+       <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span><a href="/login">Login</a></div>
+
+       <% } else {%>
+        <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span>
+       <span class="usuario"><%= session.user.username %></span><a href="/logout">Logout</a></div>
+       <% }%>
     </header>
     <nav role="navigation">
     <a class="boton" href="/">Inicio</a>
@@ -36,10 +42,11 @@
     
     <li><%= num %>º<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
     <span class="conten"><button class="boton boton1"><%= quizes[i].tema %></button>
+    <% if (session.user){%>
     <form method="post" action="/quizes/<%= quizes[i].id %>?_method=DELETE" enctype="multipart/form-data">
     <%='\u00A0\u00A0' %><input type="submit" class="boton"  value="Borrar"
     onClick="return confirm('¿ Seguro que quieres borrar:<%= quizes[i].pregunta %> ? ')"></form>
-    <button class="boton" onClick="window.location='/quizes/<%= quizes[i].id %>/edit'">Editar</button></span></li>
+    <button class="boton" onClick="window.location='/quizes/<%= quizes[i].id %>/edit'">Editar</button></span> <% }%></li>
     <% } %>
     </ol>
     </div>
@@ -51,7 +58,7 @@
        <input type="text"  size="25" name="search" placeholder="Ingrese texto a buscar...">
        <input class="boton"  type="submit" value="Buscar" />
        </form>
-       <span class="margen"></span><input class="boton"  type="button" value="Añadir Pregunta"  onclick="location.href ='/quizes/new'" /></span></p>
+         <% if (session.user){%><span class="margen"></span><input class="boton"  type="button" value="Añadir Pregunta"  onclick="location.href ='/quizes/new'" /></span><% } %></p>
     </article>
     </section>
     

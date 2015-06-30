@@ -12,6 +12,13 @@
   
     <header>
        <h1>Crea una pregunta</h1>
+       <% if (!session.user){%>
+       <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span><a href="/login">Login</a></div>
+
+       <% } else {%>
+        <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span>
+       <span class="usuario"><%= session.user.username %></span><a href="/logout">Logout</a></div>
+       <% }%>
     </header>
     <nav class="main" id="n1" role="navigation">
     <a class="boton" href="/">Inicio</a>
