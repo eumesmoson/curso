@@ -13,7 +13,7 @@
  
 <body>
     <header>
-       <h1>Bienbenido a <%= title %></h1>
+       <h1><%= title %></h1>
        <% if (!session.user){%>
        <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span><a href="/login">Login</a></div>
 
@@ -25,16 +25,26 @@
     <nav role="navigation">
     <a class="boton" href="/">Inicio</a>
     <a class="boton" href="/quizes">Preguntas</a>
-    <a class="boton" href="/estatistics">Estadísticas</a>
     <a class="boton" href="/autor">Autor</a>
     
     </nav>
     <section>
     <article>
     
-    <img src="/images/portada.svg" class="portada"/>
-    
-    <h2>El portal donde podrá crear sus propios juegos!</h2>
+    <ol>
+    <li>
+    <a href="https://openclipart.org/detail/17139/heikobarthfaq128x128">Imagen portada</a>
+    </li>
+    <li>
+    <a href="https://commons.wikimedia.org/wiki/Pan_troglodytes#/media/File:Gombe_Stream_NP_Jungtier_fressend.jpg">Foto</a></li>
+    <li>
+    <a href="https://www.iconfinder.com/icons/36506/ask_help_question_support_icon#size=128">Icono</a></li>
+    <li>
+    <a href="https://sopadecoditos.wordpress.com/2012/06/21/texto-con-efecto-3d-con-css3">Efectos Texto</a></li>
+    <li>
+    <a href="http://www.estudiosurestao.com/blog/6-efectos-para-tus-imagenes-con-css3">Efectos Imagen</a></li>
+
+    </ol>
 
     
 
@@ -45,7 +55,7 @@
 
         <a rel="license"  class="enlacesfooter" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
         <a class="enlacesfooter" href="https://github.com/eumesmoson/">Proyecto en github</a>
-        <a class="enlacesfooter" href="/creditos">Creditos</a>
+        <a class="enlacesfooter" href="#">Creditos</a>
 
     </footer>
 </body>

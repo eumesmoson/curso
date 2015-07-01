@@ -3,6 +3,7 @@ var router = express.Router();
 var quizController=require('../controllers/quiz_controller');
 var commentController = require('../controllers/comment_controller');
 var sessionController = require('../controllers/session_controller');
+var estatisticController = require('../controllers/estatistic_controller');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Preguntas',errors:[] });
@@ -19,9 +20,12 @@ router.get('/logout', sessionController.destroy);
 router.get('/autor', function(req, res, next) {
 res.render('autor', { title: ' Yo ' });
 });
-
+router.get('/creditos', function(req, res, next) {
+res.render('creditos', { title: 'Recursos Usados' });
+});
 
 router.get('/quizes', quizController.index);
+router.get('/estatistics', estatisticController.datos);
 router.get('/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 router.get('/quizes/new',     sessionController.loginRequired, quizController.new);

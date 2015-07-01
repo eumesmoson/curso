@@ -1,5 +1,6 @@
 var models=require('../models/models.js');
 
+
 exports.load = function(req, res, next, quizId) {
   models.Quiz.find({
             where: {
