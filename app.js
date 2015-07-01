@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser('Quiz 2015'));
 
-app.use(session());
+app.use(session({secret: 'keyboard cat',cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
 app.use(partials());
 app.use('/users', users);
 app.use(express.static(path.join(__dirname, 'public')));
