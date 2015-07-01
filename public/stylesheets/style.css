@@ -402,7 +402,8 @@ label{display: block}
 .buscar .boton {width: 90%;margin:2px auto;display: block;height: 30px;}
 .buscar input[type="text"]   {margin:auto ;width:96%;padding:auto;height: 30px; }
 .numpreg{margin:0px auto;width: 100%;}
-
+.boton {width: 90%;margin:2px auto;display: block;height: 30px;}
+input[type="text"]   {margin:auto ;width:96%;padding:auto;height: 30px; }
 
 .conten{
 display: inline-block;
