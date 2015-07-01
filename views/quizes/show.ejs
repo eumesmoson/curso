@@ -63,8 +63,8 @@
   </textarea>
   <%}%>
   <% if (session.user && !quiz.Comments[index].publicado){%>
-  <button class="boton aider" onClick="window.location='/quizes/<%= num %>/comments/
-  <%=quiz.Comments[index].publicado%>/publish%>'">Publicar</button>     
+  <a href="/quizes/<%= num %>/comments/<%=quiz.Comments[index].id%>/publish">
+  <button class="boton">Publicar</button>  </a>   
  <%}}}%>
     <hr>
     <p><% if (session.user){%><button class="boton aider" onclick="document.getElementById('anadecomen').style.display='block'" onClick="" >Añadir</button>
