@@ -40,6 +40,13 @@ Quiz.hasMany(Comment);
 //Quiz.hasMany(Comment);//relacion 1-n
 exports.Quiz= Quiz; //para ter acceso no resto do sitio
 exports.Comment= Comment;
+exports.sequelize = sequelize;//para querys
+Quiz.hasMany(Comment, {
+'constraints': true,
+'onUpdate': 'cascade',
+'onDelete': 'cascade',
+'hooks': true
+}); 
 //sequelize.sync() crea e inicializa taboa en bd 
 sequelize.sync().then(function(){
 
