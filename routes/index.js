@@ -25,7 +25,6 @@ res.render('creditos', { title: 'Recursos Usados' });
 });
 
 router.get('/quizes', quizController.index);
-router.get('/estatistics', estatisticController.datos);
 router.get('/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 router.get('/quizes/new',     sessionController.loginRequired, quizController.new);
@@ -37,6 +36,7 @@ router.delete('/quizes/:quizId(\\d+)',  sessionController.loginRequired, quizCon
 router.post('/quizes/:quizId(\\d+)/comments', commentController.create);
 router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', 
 sessionController.loginRequired, commentController.publish);
+router.get('/estatistics', estatisticController.datos);
 
 
 

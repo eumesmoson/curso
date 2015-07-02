@@ -15,19 +15,19 @@
     <header>
        <h1><%= title %></h1>
     <% if (!session.user){%>
-       <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span><a href="/login">Login</a></div>
+       <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ><a href="/login">Login</a></div>
 
        <% } else {%>
-        <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" ></span>
+        <div  style="float:right;clear: right;margin-right:10px;margin-top:1%" >
        <span class="usuario"><%= session.user.username %></span><a href="/logout">Logout</a></div>
        <% }%>
     </header>
     <nav role="navigation">
     <a class="boton" href="/">Inicio</a>
     <a class="boton" href="/quizes">Preguntas</a>
-    <a class="boton" href="/autor">Estadísticas</a>
+    <a class="boton" href="/estatistics">Estadísticas</a>
     <a class="boton" href="/autor">Autor</a>
-
+  
     </nav>
     <section>
     <article>
@@ -64,7 +64,7 @@
     </section>
     
     <footer>
-        <a class="enlacesfooter" href="https://github.com/eumesmoson/curso/">Proyecto en github</a>
+        <a class="enlacesfooter" href="https://github.com/eumesmoson/curso/">github</a>
         <a rel="license"  class="enlacesfooter" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
 
     </footer>
