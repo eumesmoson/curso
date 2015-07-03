@@ -42,7 +42,7 @@
     else num=i+1;%>
     
     <li><%= num %>º<a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
-    <span class="conten"><button class="boton boton1"><%= quizes[i].tema %></button>
+    <span class="conten"><a  href="/quizes/tema/<%= quizes[i].tema %>"><button class="boton boton1"><%= quizes[i].tema %></button></a>
     <% if (session.user){%>
     <form method="post" action="/quizes/<%= quizes[i].id %>?_method=DELETE" enctype="multipart/form-data">
     <%='\u00A0\u00A0' %><input type="submit" class="boton"  value="Borrar"

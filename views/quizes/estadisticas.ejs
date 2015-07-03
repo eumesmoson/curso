@@ -13,20 +13,19 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Humanidades',     <%=estadisticas.humanidades%>],
+          ['Ocio',            <%=estadisticas.ocio%>],
+          ['Ciencia',         <%=estadisticas.ciencia%>],
+          ['Tecnología',      <%=estadisticas.tecnologia%>],
+          ['Otros',           <%=estadisticas.otro%>]
         ]);
 
         var options = {
           title: 'Preguntas por Tema',
           titleTextStyle:{ color: 'white',fontSize:14, bold: true,},
           is3D: true,
-          backgroundColor:'#4E83B6',
-          width:250,
-          heigth:300,
+          backgroundColor:'#6CACDE',
+        
           fontSize:10,
           legend:{position: 'right'},
         };
@@ -59,20 +58,28 @@
     
     </nav>
     <section>
-    <article  >
-
-    <ol class="datosgafica">
-    <li>Número de Preguntas: <%=numpre%><%=mensaje%></li>
-    <li>Número de Comentarios: <%=numcom%><%=mensaje%></li>
-    <li>Média  de Comentarios por Pregunta: <%=media%><%=mensaje%></li>
-    <li>Comentarios Publicados: <%=publi%><%=mensaje%></li>
-    <li>Comentarios No Publicados: <%=nopubli%><%=mensaje%></li>
-    <li>Preguntas con Comentarios: <%=precomen%><%=mensaje%></li>
-    </ol>
- 
-
+    <br>
+    <article><h2>Información de la Base de Datos:</h2></article>
     
-    <div id="piechart_3d" class="gafica"></div>    
+    <article style="margin-left:1px" >
+    
+    <ol class="datosgafica">
+    <li>Número de Preguntas: <%=estadisticas.numpre%><%=mensaje%></li>
+    <li>Número de Comentarios: <%=estadisticas.numcom%><%=mensaje%></li>
+    <li>Média  de Comentarios por Pregunta: <%=estadisticas.media%><%=mensaje%></li>
+    <li>Comentarios Publicados: <%=estadisticas.publi%><%=mensaje%></li>
+    <li>Comentarios No Publicados: <%=estadisticas.nopubli%><%=mensaje%></li>
+    <li>Preguntas con Comentarios: <%=estadisticas.precomen%><%=mensaje%></li>
+    <li>Preguntas sobre Humanidades: <%=estadisticas.humanidades%><%=mensaje%></li>
+    <li>Preguntas sobre Ocio: <%=estadisticas.ocio%><%=mensaje%></li>
+    <li>Preguntas sobre Ciencia: <%=estadisticas.ciencia%><%=mensaje%></li>
+    <li>Preguntas sobre Tecnología: <%=estadisticas.tecnologia%><%=mensaje%></li>
+    <li>Preguntas sobre Otros Temas: <%=estadisticas.otro%><%=mensaje%></li>
+    </ol>  
+
+    </article>
+    <article id="piechart_3d" class="gafica">
+        
     </article>
     </section>
     
@@ -80,7 +87,7 @@
 
         <a rel="license"  class="enlacesfooter" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
         <a class="enlacesfooter" href="https://github.com/eumesmoson/">github</a>
-        <a class="enlacesfooter" href="#">Creditos</a>
+        <a class="enlacesfooter" href="/creditos">Creditos</a>
 
     </footer>
 </body>

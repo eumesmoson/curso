@@ -123,4 +123,19 @@ exports.destroy=function(req,res){
 //res.redirect('/quizes');
 
 };
+exports.temas=function(req,res,next){
+var tema=req.url.split("/");
 
+models.Quiz.findAll({where: {tema : tema[3]}}).then(
+function(quizes) {
+res.render('quizes/index.ejs', { quizes:quizes,title:'Preguntas sobre : '+tema[3],
+	texto:'Preguntas sobre el tema : '+tema[3],errors:[]})
+}).catch(function(error) { next(error);});	
+
+	
+//res.render('quizes/temas.ejs', { title:'Preguntas de: '+ tema[3] });
+
+
+
+
+};

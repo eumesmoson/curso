@@ -25,7 +25,9 @@ res.render('creditos', { title: 'Recursos Usados' });
 });
 
 router.get('/quizes', quizController.index);
+router.get('/quizes/tema/:tema[a-z]', quizController.temas);
 router.get('/quizes/:quizId(\\d+)', quizController.show);
+router.get('/quizes/tema/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 router.get('/quizes/new',     sessionController.loginRequired, quizController.new);
 router.post('/quizes/create', sessionController.loginRequired, quizController.create);

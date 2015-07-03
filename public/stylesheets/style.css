@@ -14,17 +14,26 @@ body
 .gafica{
   border:2px #73C557 solid;
   border-radius: 10px;
-  width:250px;
-  height:auto;
-  margin:10px auto;
+  width:50%;
+  height:50%;
+  float:right;
+  clear: right;
+  display: inline;
+  margin-right: 3px;
+  margin-top:10%;
+ 
 
 }
 .datosgafica{
   border:2px #73C557 solid;
   border-radius: 10px;
-  width:auto;
+  width:60%;
   height:auto;
-  margin:10px auto;
+   margin-top:7%;
+  margin-left: 3px;
+  float:left;
+  display: inline;
+
   }
 
 /*https://sopadecoditos.wordpress.com/2012/06/21/texto-con-efecto-3d-con-css3/*/
@@ -46,7 +55,7 @@ background:linear-gradient(#83D667 0%, #67B84B 100%);
 }
 h1{margin:2px;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);display: inline;}
 .usuario{color:white;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);}
-h2{color:#DE6C05;text-shadow:1px 2px 3px #9C4A00,0px 4px 3px rgba(0,0,0,0.7);}
+h2{color:#DE6C05;text-shadow:1px 2px 3px #9C4A00,0px 4px 3px rgba(0,0,0,0.7);margin:1px auto;}
 .usuario{color:white;text-shadow:1px 2px 3px #63A1D3,0px 4px 3px rgba(0,0,0,0.7);
 font-weight: bold}
 nav
@@ -350,6 +359,8 @@ margin-left: 2px;
 .alider{float:right;clear: right;}
 #accesos{float:right;clear: right;}
 
+
+
 }
 /* estilos para pantallas medianas */
 @media all and (max-width: 840px) {
@@ -394,6 +405,31 @@ a:hover
   text-decoration: underline;
 } 
 .alider{float:right;}
+.gafica{
+
+  border-radius: 10px;
+  width:auto;
+  height:auto;
+  display: inline;
+  margin-top:1%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
+
+}
+.datosgafica{
+  border:2px #73C557 solid;
+  border-radius: 10px;
+  width:95%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+
+  }
+  ol {width: 99%;}
+  li {width: 99%;}
 }
 @media all and (max-width: 360px) {
 body{margin:0px;font-size:16px;}
@@ -431,6 +467,23 @@ width: 100%;
 .contenedor form input[type="submit"]{width:90%;}
 #vercomen textarea {resize: none;width:96%;margin:2px auto;padding:auto;overflow:auto;}
 #anadecomen textarea {resize: none;width:96%;margin:2px auto;padding:auto;}
-ol{list-style: none;}
+ol{list-style: none;padding: 0px;}
+li{padding: 0px;}
+.gafica{
+
+  width:100%;
+  height:auto;
+  display: block;
+  overflow: auto;
+
+}
+.datosgafica{
+  border:none;
+  width:100%;
+  height:auto;
+  display: block;
+  
+
+  }
 
 }
