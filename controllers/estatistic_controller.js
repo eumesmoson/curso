@@ -29,29 +29,36 @@ exports.datos=function(req,res){
        distinct: true
    });
         return promise;
-   }).then(function(count) {
-        datos.precomen= count.count;
-        datos.presincomen= datos.numpre - count.count;
-        return models.Comment.count();
-    }).then(function(count) {
-        datos.numcom = count;
-        datos.media=(datos.numcom/datos.numpre).toFixed(2);
+   })
+   .then(function(count) {
+    datos.precomen= count.count;
+    datos.presincomen= datos.numpre - count.count;
+    return models.Comment.count();
+    })
+   .then(function(count) {
+    datos.numcom = count;
+    datos.media=(datos.numcom/datos.numpre).toFixed(2);
       
-    }).then(function(){
-models.Comment.count({where: {publicado:true}}).then(function(count){datos.publi=count;});
-models.Comment.count({where: {publicado:false}}).then(function(count){datos.nopubli=count;});
-models.Quiz.count({where: {tema :'humanidades'}}).then(function(count){datos.humanidades=count;});
-models.Quiz.count({where: {tema :'ocio'}}).then(function(count){datos.ocio=count;});
-models.Quiz.count({where: {tema :'ciencia'}}).then(function(count){datos.ciencia=count;});
-models.Quiz.count({where: {tema :'tecnologia'}}).then(function(count){datos.tecnologia=count;});
-models.Quiz.count({where: {tema :'otro'}}).then(function(count){datos.otro=count;});}
-    ).catch(function(error) {
-        console.error(error);
-    }).finally(function(error) {
-        next();    });
+    })
+    .then(function(){
+    models.Comment.count({where: {publicado:true}}).then(function(count){datos.publi=count;});}
+    )
+    .then(function(){
+    models.Comment.count({where: {publicado:false}}).then(function(count){datos.nopubli=count;});})
+    .then(function(){
+    models.Quiz.count({where: {tema :'humanidades'}}).then(function(count){datos.humanidades=count;});})
+    .then(function(){
+    models.Quiz.count({where: {tema :'ocio'}}).then(function(count){datos.ocio=count;});})
+    .then(function(){
+    models.Quiz.count({where: {tema :'ciencia'}}).then(function(count){datos.ciencia=count;});})
+    .then(function(){
+    models.Quiz.count({where: {tema :'tecnologia'}}).then(function(count){datos.tecnologia=count;});})
+    .then(function(){
+    models.Quiz.count({where: {tema :'otro'}}).then(function(count){datos.otros=count;});})
+    .catch(function(error) {console.error(error);
+    }).finally(function(error) {next();});
 	
-    res.render('quizes/estadisticas', 
-    {title:'Estadísticas',estadisticas:datos,mensaje:mens});	
+    res.render('quizes/estadisticas', {title:'Estadísticas',estadisticas:datos,mensaje:mens});	
 
 //res.redirect('/quizes');
 
