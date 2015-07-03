@@ -40,7 +40,7 @@ Quiz.hasMany(Comment);
 //Quiz.hasMany(Comment);//relacion 1-n
 exports.Quiz= Quiz; //para ter acceso no resto do sitio
 exports.Comment= Comment;
-exports.sequelize = sequelize;//para querys
+//exports.sequelize = sequelize;//para querys
 Quiz.hasMany(Comment, {
 'constraints': true,
 'onUpdate': 'cascade',
